@@ -61,11 +61,11 @@ prompt_if_unset() {
 # -------------------------
 : "${DO_COVERAGE:=1}"
 : "${TARGET:=pex3}"
-: "${LCOV_FILE_FILTER:=listAsLinkedList.c}"
+: "${MAKEFILE_SRC:=instructor_make/Makefile}"
+: "${LCOV_FILE_FILTER:="*listAsLinkedList.c"}"
 : "${CUTOFF_GIT_COMMIT_TIMESTAMP:=2026-02-22T00:00:00Z}"
 
-COVERAGE_OUT_DIR="${COVERAGE_OUT_DIR:-coverage-html}"
-COVERAGE_OUT_DIR="$(cd "$COVERAGE_OUT_DIR" 2>/dev/null || mkdir -p "$COVERAGE_OUT_DIR" && cd "$COVERAGE_OUT_DIR"; pwd)"
+#COVERAGE_OUT_DIR="$(cd "$COVERAGE_OUT_DIR" 2>/dev/null || mkdir -p "$COVERAGE_OUT_DIR" && cd "$COVERAGE_OUT_DIR"; pwd)"
 
 # -------------------------
 # Require tools
@@ -84,6 +84,7 @@ fi
 # -------------------------
 prompt_if_unset "ASSIGNMENT_ID" "Enter GitHub Classroom Assignment ID"
 prompt_if_unset "DEST_DIR" "Destination directory for repos" "repos-$ASSIGNMENT_ID"
+prompt_if_unset "COVERAGE_OUT_DIR" "Directory for code coverage output" "coverage-$ASSIGNMENT_ID"
 prompt_if_unset "MAKEFILE_SRC" "Path to instructor Makefile to copy into each repo"
 
 mkdir -p "$DEST_DIR"
