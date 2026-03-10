@@ -9,7 +9,7 @@
 
 ## Usage
 
-Several variables need to be set.  The defaults will work pretty reliably for CS 220 PEX 3 with just 
+Several variables need to be set.  The defaults will work pretty reliably for CS 220 PEX 3 with just running it and it will prompt for needed variables.
 
 Get the assignment ID for the batch to run the code coverage tool
 
