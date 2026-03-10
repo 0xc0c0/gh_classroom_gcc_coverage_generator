@@ -65,8 +65,6 @@ prompt_if_unset() {
 : "${LCOV_FILE_FILTER:="*listAsLinkedList.c"}"
 : "${CUTOFF_GIT_COMMIT_TIMESTAMP:=2026-02-22T00:00:00Z}"
 
-#COVERAGE_OUT_DIR="$(cd "$COVERAGE_OUT_DIR" 2>/dev/null || mkdir -p "$COVERAGE_OUT_DIR" && cd "$COVERAGE_OUT_DIR"; pwd)"
-
 # -------------------------
 # Require tools
 # -------------------------
@@ -88,6 +86,8 @@ prompt_if_unset "COVERAGE_OUT_DIR" "Directory for code coverage output" "coverag
 prompt_if_unset "MAKEFILE_SRC" "Path to instructor Makefile to copy into each repo"
 
 mkdir -p "$DEST_DIR"
+
+COVERAGE_OUT_DIR="$(cd "$COVERAGE_OUT_DIR" 2>/dev/null || mkdir -p "$COVERAGE_OUT_DIR" && cd "$COVERAGE_OUT_DIR"; pwd)"
 
 echo "ASSIGNMENT_ID     = $ASSIGNMENT_ID"
 echo "DEST_DIR          = $DEST_DIR"

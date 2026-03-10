@@ -1,4 +1,4 @@
-# Placeholder README File
+# README
 
 ## Setup
 
@@ -9,9 +9,7 @@
 
 ## Usage
 
-You will need some data before the script will run successfully.  Note the default variables section in the primary script file.
-
-This script was initially designed for CS 220 PEX 3.
+Several variables need to be set.  The defaults will work pretty reliably for CS 220 PEX 3 with just 
 
 Get the assignment ID for the batch to run the code coverage tool
 
@@ -20,3 +18,7 @@ Get the assignment ID for the batch to run the code coverage tool
 then find the assignment ID for the respective assignment and export the `ASSIGNMENT_ID` variable in `bash`
 
 `export ASSIGNMENT_ID=123456`
+
+## TODO
+
+- [ ] add conditional logic for case when there is no filter on file or just a specific .c file (patterns okay)
